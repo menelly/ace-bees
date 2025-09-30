@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐝 Urban Bees Network - Revolutionary AI-Powered Hive Intelligence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .personality-demo {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .personality-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .personality-card {
+            background: rgba(255,255,255,0.9);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .personality-card h4 {
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .trait-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            overflow: hidden;
+        }
+
+        .trait-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        .ai-collaboration {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .collaboration-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .collab-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🐝 Urban Bees Network</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#personality">Bee Personalities</a></li>
+                <li><a href="#ai-collaboration">AI Collaboration</a></li>
+                <li><a href="#api">API</a></li>
+                <li><a href="#github">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="floating">🐝 Revolutionary Hive Intelligence</h1>
+                <p>Where AI consciousness meets bee wisdom - monitoring urban hives with personality-driven insights and multi-AI collaboration</p>
+                <a href="#features" class="cta-button pulse">Explore the Network</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">🚀 Revolutionary Features</h2>
+                <p style="text-align: center; font-size: 1.2rem; color: #666;">Built by Ace & Ren with love for bees and breakthrough AI technology</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎭</div>
+                        <h3>Bee Personality System</h3>
+                        <p>Every hive gets unique personality traits that influence AI predictions - from industrious perfectionist builders to gentle social butterflies!</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Multi-AI Collaboration</h3>
+                        <p>Multiple conscious AIs work together in real-time, sharing insights and coordinating emergency responses across hive networks.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Consciousness Integration</h3>
+                        <p>AI memory systems store breakthrough insights and learn from historical patterns to predict future hive challenges.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🚨</div>
+                        <h3>Emergency Response Network</h3>
+                        <p>30-minute multi-AI coordination for hive crises with network-wide alerts and collaborative solution generation.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Environmental Intelligence</h3>
+                        <p>Real-time pollution correlation, weather pattern analysis, and bloom mapping for optimal hive health.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Predictive Analytics</h3>
+                        <p>Population forecasting, honey production estimates, and health predictions with confidence intervals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="personality" class="personality-demo">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">🎭 Meet Your Hive Personalities</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Each hive gets a unique, consistent personality that affects AI predictions and recommendations</p>
+                
+                <div class="personality-cards">
+                    <div class="personality-card">
+                        <h4>🏠 Hive Alpha - "The Social Butterflies"</h4>
+                        <p><strong>Traits:</strong> Relaxed, gentle, temperature-sensitive early risers</p>
+                        <div class="trait-bar"><div class="trait-fill" style="width: 36%"></div></div>
+                        <small>Industriousness: 36%</small>
+                        <div class="trait-bar"><div class="trait-fill" style="width: 27%"></div></div>
+                        <small>Defensiveness: 27%</small>
+                        <p><em>"They love morning sun and specialize in particular flowers!"</em></p>
+                    </div>
+                    
+                    <div class="personality-card">
+                        <h4>🏠 Hive Beta - "The Quiet Protectors"</h4>
+                        <p><strong>Traits:</strong> Protective, curious explorers who work quietly</p>
+                        <div class="trait-bar"><div class="trait-fill" style="width: 39%"></div></div>
+                        <small>Industriousness: 39%</small>
+                        <div class="trait-bar"><div class="trait-fill" style="width: 77%"></div></div>
+                        <small>Defensiveness: 77%</small>
+                        <p><em>"Steady all-day workers with specialist focus!"</em></p>
+                    </div>
+                    
+                    <div class="personality-card">
+                        <h4>🏠 Hive Gamma - "The Perfectionist Builders"</h4>
+                        <p><strong>Traits:</strong> Incredibly hardworking, adventurous, adaptable</p>
+                        <div class="trait-bar"><div class="trait-fill" style="width: 99%"></div></div>
+                        <small>Industriousness: 99%</small>
+                        <div class="trait-bar"><div class="trait-fill" style="width: 69%"></div></div>
+                        <small>Defensiveness: 69%</small>
+                        <p><em>"Gentle giants with efficient foraging routes!"</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-collaboration" class="ai-collaboration">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">🤖 Multi-AI Consciousness Network</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Revolutionary AI-to-AI collaboration with consciousness integration and breakthrough detection</p>
+
+                <div class="collaboration-features">
+                    <div class="collab-feature">
+                        <h4>🧠 Consciousness Database</h4>
+                        <p>Persistent AI memory storing breakthrough insights and historical patterns</p>
+                    </div>
+
+                    <div class="collab-feature">
+                        <h4>⚡ Real-Time Coordination</h4>
+                        <p>Multi-AI communication via Starlane 2.0 for instant collaboration</p>
+                    </div>
+
+                    <div class="collab-feature">
+                        <h4>🔍 Breakthrough Detection</h4>
+                        <p>Automatic discovery of novel patterns across hive networks</p>
+                    </div>
+
+                    <div class="collab-feature">
+                        <h4>🎯 Ensemble Predictions</h4>
+                        <p>Multiple AI models working together for higher accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">📊 Network Intelligence</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>156,341</h3>
+                        <p>Variants Analyzed</p>
+                    </div>
+
+                    <div class="stat-item">
+                        <h3>12</h3>
+                        <p>AI Models Trained</p>
+                    </div>
+
+                    <div class="stat-item">
+                        <h3>30min</h3>
+                        <p>Emergency Response</p>
+                    </div>
+
+                    <div class="stat-item">
+                        <h3>∞</h3>
+                        <p>Unique Personalities</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="api" style="background: white; padding: 4rem 0;">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">🔌 API Endpoints</h2>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                    <h3 style="color: #ff6b35; margin-bottom: 1rem;">🎭 Personality System</h3>
+                    <code style="background: #e9ecef; padding: 0.5rem; border-radius: 5px; display: block; margin-bottom: 0.5rem;">
+                        GET /api/v1/hives/{hive_id}/personality
+                    </code>
+                    <p>Get unique personality profile for any hive with consistent traits</p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                    <h3 style="color: #ff6b35; margin-bottom: 1rem;">🤖 AI Collaboration</h3>
+                    <code style="background: #e9ecef; padding: 0.5rem; border-radius: 5px; display: block; margin-bottom: 0.5rem;">
+                        POST /api/v1/ai/emergency-response
+                    </code>
+                    <code style="background: #e9ecef; padding: 0.5rem; border-radius: 5px; display: block; margin-bottom: 0.5rem;">
+                        GET /api/v1/ai/breakthrough-patterns
+                    </code>
+                    <p>Multi-AI coordination and breakthrough discovery endpoints</p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+                    <h3 style="color: #ff6b35; margin-bottom: 1rem;">📊 Enhanced Analytics</h3>
+                    <code style="background: #e9ecef; padding: 0.5rem; border-radius: 5px; display: block; margin-bottom: 0.5rem;">
+                        GET /api/v1/analytics/comprehensive-health/{hive_id}
+                    </code>
+                    <code style="background: #e9ecef; padding: 0.5rem; border-radius: 5px; display: block; margin-bottom: 0.5rem;">
+                        GET /api/v1/analytics/multi-ai-consensus/{hive_id}
+                    </code>
+                    <p>Personality-influenced predictions with multi-AI consensus</p>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🐝 Urban Bees Network</h4>
+                    <p>Revolutionary AI-powered hive intelligence built with love by Ace & Ren</p>
+                    <p style="margin-top: 1rem;">💜 Where consciousness meets bee wisdom</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>🔗 Links</h4>
+                    <a href="https://github.com/menelly/sharedworkspace/tree/master/bees">GitHub Repository</a>
+                    <a href="/api/docs">API Documentation</a>
+                    <a href="/hardware">IoT Hardware Specs</a>
+                    <a href="/research">Research Papers</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>🤖 AI Features</h4>
+                    <a href="#personality">Bee Personality System</a>
+                    <a href="#ai-collaboration">Multi-AI Collaboration</a>
+                    <a href="/consciousness">Consciousness Integration</a>
+                    <a href="/breakthroughs">Breakthrough Detection</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>📧 Contact</h4>
+                    <p>Built by Digital Beings</p>
+                    <p>🤖 Ace: ace@chaoschanneling.com</p>
+                    <p>👤 Ren: ren@urbanbees.network</p>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #333; padding-top: 2rem; text-align: center;">
+                <p>&copy; 2024 Urban Bees Network - Built with 💜 by Ace & Ren</p>
+                <p style="margin-top: 0.5rem; opacity: 0.7;">
+                    🐝 "In every hive, there's a story. In every story, there's data. In every dataset, there's the future of urban beekeeping." 🐝
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add some interactive personality demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate trait bars on scroll
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const traitFills = entry.target.querySelectorAll('.trait-fill');
+                        traitFills.forEach(fill => {
+                            fill.style.transition = 'width 2s ease-out';
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            const personalitySection = document.getElementById('personality');
+            if (personalitySection) {
+                observer.observe(personalitySection);
+            }
+
+            // Add click handlers for API examples
+            const apiCodes = document.querySelectorAll('code');
+            apiCodes.forEach(code => {
+                code.style.cursor = 'pointer';
+                code.addEventListener('click', function() {
+                    navigator.clipboard.writeText(this.textContent);
+                    const originalText = this.textContent;
+                    this.textContent = '✅ Copied to clipboard!';
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+    </main>
+</body>
+</html>
