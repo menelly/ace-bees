@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-honey-50 to-flower-lavender min-h-screen;
+  }
+}
+
+@layer components {
+  .bee-container {
+    @apply relative overflow-hidden rounded-lg bg-gradient-to-b from-sky-100 to-green-100;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 183, 197, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(152, 251, 152, 0.2) 0%, transparent 50%);
+  }
+  
+  .hive-cell {
+    @apply relative bg-honey-200 border-2 border-honey-400 rounded-sm;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+  }
+  
+  .bee-sprite {
+    @apply absolute w-4 h-4 transition-all duration-300 ease-in-out;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+  
+  .waggle-dance {
+    @apply animate-waggle;
+  }
+  
+  .floating-bee {
+    @apply animate-float;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+}

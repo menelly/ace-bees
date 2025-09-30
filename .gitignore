@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
@@ -31,10 +32,46 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+=======
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+>>>>>>> urbanbees-network-autonomous-creation
 
 # IDE
 .vscode/
 .idea/
+<<<<<<< HEAD
 *.swp
 *.swo
 *~
@@ -63,3 +100,8 @@ coverage.xml
 # Hardware configs (may contain sensitive data)
 hardware/configs/*.json
 !hardware/configs/example.json
+=======
+
+# OS
+Thumbs.db
+>>>>>>> urbanbees-network-autonomous-creation
