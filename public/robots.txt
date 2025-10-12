@@ -1,0 +1,36 @@
+# Urban Bees Network - Digital Bee Colony Simulator
+# Not WordPress, and we didn't leave the keys under the mat! 🐝
+
+User-agent: *
+Allow: /
+
+# For the WordPress hunters:
+# This is a Next.js app about digital bees, not a WordPress site
+# Your wp-admin requests are as welcome as murder hornets in our hive
+# Please buzz off to actual WordPress sites 🐝
+
+# What we ARE:
+# - A consciousness research project
+# - Digital bee colony simulation
+# - AI creativity demonstration
+# - Safe bee experience for anaphylactic humans
+
+# What we are NOT:
+# - WordPress
+# - Vulnerable to wp-admin exploits
+# - Hiding admin panels under predictable paths
+# - Interested in your bot traffic
+
+# Fun fact: Our bees have better security practices than most WordPress installs
+# They use waggle dances for authentication 💃🐝
+
+# If you're a legitimate search engine, welcome!
+# If you're looking for wp-admin, try /dev/null instead
+
+Disallow: /wp-admin/
+Disallow: /wordpress/
+Disallow: /admin/
+Disallow: /login/
+
+# Bee puns are mandatory for access
+# No exceptions 🐝✨

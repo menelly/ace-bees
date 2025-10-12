@@ -1,12 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-honey-50: #fffbeb;
+  --color-honey-100: #fef3c7;
+  --color-honey-200: #fde68a;
+  --color-honey-300: #fcd34d;
+  --color-honey-400: #fbbf24;
+  --color-honey-500: #f59e0b;
+  --color-honey-600: #d97706;
+  --color-honey-700: #b45309;
+  --color-honey-800: #92400e;
+  --color-honey-900: #78350f;
+
+  --color-bee-black: #2F2F2F;
+  --color-bee-dark-black: #1A1A1A;
+
+  --color-flower-lavender: #E6E6FA;
+  --color-flower-pink: #FFB6C1;
+  --color-flower-mint: #98FB98;
+
+  --color-hive-brown: #8B4513;
+  --color-hive-light: #DEB887;
+
+  --animate-gentle-pulse: gentle-pulse 3s ease-in-out infinite;
+  --animate-waggle: waggle 1s ease-in-out infinite;
+  --animate-float: float 4s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes waggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
 
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
-  
+
   body {
     @apply bg-gradient-to-br from-honey-50 to-flower-lavender min-h-screen;
   }

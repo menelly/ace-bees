@@ -10,19 +10,19 @@ interface BeeSpriteProps {
 }
 
 export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
-  // Create personality-based visual variations
-  const getPersonalityColor = () => {
+  // Select bee icon based on personality traits
+  const getBeeIcon = () => {
     const { personality } = bee;
-    
-    // Base bee colors with personality influence
+
+    // Match bee icons to personality types
     if (personality.creativity > 0.7) {
-      return personality.preferredColors[0] || '#FFD700';
+      return '/bee_1.png'; // Creative bee with happy face
     } else if (personality.socialTendency > 0.7) {
-      return '#FFA500'; // Warm orange for social bees
+      return '/bee_3.png'; // Social bee with traditional look
     } else if (personality.riskTolerance > 0.7) {
-      return '#FF8C00'; // Bold orange for adventurous bees
+      return '/bee_2.png'; // Adventurous bee with side view
     } else {
-      return '#FFD700'; // Classic honey gold
+      return '/bee_4.png'; // Calm bee with side view
     }
   };
 
@@ -35,7 +35,7 @@ export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
           transition: {
             duration: 0.8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
           }
         };
       case 'foraging':
@@ -44,7 +44,7 @@ export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
           transition: {
             duration: 0.6,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
           }
         };
       case 'building':
@@ -53,7 +53,7 @@ export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
           transition: {
             duration: 1.2,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
           }
         };
       case 'resting':
@@ -62,7 +62,7 @@ export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
           transition: {
             duration: 2,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
           }
         };
       default:
@@ -71,7 +71,7 @@ export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
           transition: {
             duration: 1.5,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
           }
         };
     }
@@ -97,72 +97,37 @@ export const BeeSprite: React.FC<BeeSpriteProps> = ({ bee, scale = 1 }) => {
     <motion.div
       className="absolute pointer-events-none"
       style={{
-        left: bee.position.x - 8,
-        top: bee.position.y - 8,
+        left: bee.position.x - 16,
+        top: bee.position.y - 16,
         transform: `rotate(${bee.rotation}rad)`,
       }}
       animate={getActivityAnimation()}
     >
-      {/* Bee Body */}
-      <motion.div
+      {/* Bee Image */}
+      <motion.img
+        src={getBeeIcon()}
+        alt={`Bee ${bee.id}`}
         className="relative"
         style={{
-          width: getSizeVariation() * 16,
-          height: getSizeVariation() * 16,
+          width: getSizeVariation() * 32,
+          height: getSizeVariation() * 32,
           filter: `drop-shadow(${getHappinessGlow()})`,
         }}
-      >
-        {/* Main body (ellipse) */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: '100%',
-            height: '70%',
-            top: '15%',
-            background: `linear-gradient(45deg, ${getPersonalityColor()}, #2F2F2F 30%, ${getPersonalityColor()} 60%, #2F2F2F 90%)`,
-            borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-          }}
-        />
-        
-        {/* Wings */}
-        <div
-          className="absolute"
-          style={{
-            width: '40%',
-            height: '30%',
-            top: '10%',
-            left: '10%',
-            background: 'rgba(255, 255, 255, 0.7)',
-            borderRadius: '50%',
-            transform: 'rotate(-20deg)',
-          }}
-        />
-        <div
-          className="absolute"
-          style={{
-            width: '40%',
-            height: '30%',
-            top: '10%',
-            right: '10%',
-            background: 'rgba(255, 255, 255, 0.7)',
-            borderRadius: '50%',
-            transform: 'rotate(20deg)',
-          }}
-        />
-        
-        {/* Personality indicator dot */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: '20%',
-            height: '20%',
-            top: '40%',
-            left: '40%',
-            backgroundColor: bee.personality.preferredColors[1] || '#FF6347',
-            opacity: 0.8,
-          }}
-        />
-      </motion.div>
+      />
+
+      {/* Personality color indicator (small dot overlay) */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          width: '8px',
+          height: '8px',
+          top: '20%',
+          right: '20%',
+          backgroundColor: bee.personality.preferredColors[1] || '#FF6347',
+          opacity: 0.8,
+          border: '1px solid white',
+        }}
+      />
       
       {/* Activity indicator */}
       {bee.currentActivity === 'dancing' && (
